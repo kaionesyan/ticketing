@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
+    "test:ci": "jest",
     "docker-build": "docker build -t kaionesyan/orders .",
     "docker-push": "docker push kaionesyan/orders",
     "docker-update": "yarn docker-build && yarn docker-push"
