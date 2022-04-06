@@ -1,15 +1,12 @@
 {
   "name": "auth",
-  "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --poll src/index.ts",
+    "start": "node build/index.js",
+    "dev": "ts-node-dev --poll src/index.ts",
+    "build": "tsc",
     "test": "jest --watchAll --no-cache",
-    "test:ci": "jest",
-    "docker-build": "docker build -t kaionesyan/auth .",
-    "docker-push": "docker push kaionesyan/auth",
-    "docker-update": "yarn docker-build && yarn docker-push"
+    "test:ci": "jest"
   },
   "jest": {
     "preset": "ts-jest",
