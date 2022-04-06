@@ -1,7 +1,9 @@
 FROM node:alpine
 
 WORKDIR /app
+COPY package.json .
+RUN yarn --production=true
 COPY . .
-RUN yarn --production=true && yarn build
+RUN yarn build
 
 CMD ["yarn", "start"]
