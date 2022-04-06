@@ -1,15 +1,12 @@
 {
   "name": "tickets",
-  "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --poll src/index.ts",
+    "start": "node build/index.js",
+    "dev": "ts-node-dev --poll src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
     "test": "jest --watchAll --no-cache",
-    "test:ci": "jest",
-    "docker-build": "docker build -t kaionesyan/tickets .",
-    "docker-push": "docker push kaionesyan/tickets",
-    "docker-update": "yarn docker-build && yarn docker-push"
+    "test:ci": "jest"
   },
   "jest": {
     "preset": "ts-jest",
