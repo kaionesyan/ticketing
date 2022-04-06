@@ -4,7 +4,7 @@
   "scripts": {
     "start": "node build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest"
   },
