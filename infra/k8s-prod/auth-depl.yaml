@@ -24,7 +24,7 @@ spec:
             - name: MONGO_URI
               valueFrom:
                 secretKeyRef:
-                  name: mongo-auth-secret
+                  name: mongo-secret
                   key: MONGO_URI
 ---
 apiVersion: v1

@@ -42,7 +42,7 @@ const start = async () => {
     new OrderCancelledListener(natsWrapper.client).listen();
 
     await mongoose.connect(process.env.MONGO_URI, {
-      dbName: 'auth',
+      dbName: 'payments',
       retryWrites: true,
       w: 'majority',
     });

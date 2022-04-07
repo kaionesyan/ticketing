@@ -11,7 +11,11 @@ const start = async () => {
   }
 
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI, {
+      dbName: 'auth',
+      retryWrites: true,
+      w: 'majority',
+    });
 
     console.log('App connected to the database');
   } catch (error) {

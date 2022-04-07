@@ -45,7 +45,11 @@ const start = async () => {
     new ExpirationCompleteListener(natsWrapper.client).listen();
     new PaymentCreatedListener(natsWrapper.client).listen();
 
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI, {
+      dbName: 'orders',
+      retryWrites: true,
+      w: 'majority',
+    });
 
     console.log('App connected to the database');
   } catch (error) {
